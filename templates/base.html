@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}WeTeach{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendors/font-awesome/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendors/bootstrap-icons/bootstrap-icons.css' %}">
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Header START -->
+    {% include 'includes/header.html' %}
+    <!-- Header END -->
+    
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer START -->
+    {% include 'includes/footer.html' %}
+    <!-- Footer END -->
+    
+    <!-- Back to top -->
+    <div class="back-top"><i class="bi bi-arrow-up-short"></i></div>
+    
+    <!-- Bootstrap JS -->
+    <script src="{% static 'vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    
+    <!-- Vendors -->
+    <script src="{% static 'vendors/tiny-slider/tiny-slider.js' %}"></script>
+    <script src="{% static 'vendors/purecounter/purecounter_vanilla.js' %}"></script>
+    
+    <!-- Template Functions -->
+    <script src="{% static 'js/functions.js' %}"></script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
