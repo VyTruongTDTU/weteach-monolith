@@ -34,6 +34,10 @@ for app_name in app_names:
         urlpatterns.append(path(f'{app_name}/', include(f'apps.{app_name}.urls')))
     except ModuleNotFoundError:
         pass  # Skip apps without a urls.py file
+    # try:
+    #     urlpatterns.append(path(f'api/{app_name}/', include(f'apps.{app_name}.api_urls')))
+    # except ModuleNotFoundError:
+    #     pass  # Skip apps without a urls.py file
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

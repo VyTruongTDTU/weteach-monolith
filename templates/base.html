@@ -25,7 +25,9 @@
 </head>
 <body>
     <!-- Header START -->
-    {% include 'includes/header.html' %}
+    {% block show_header %}
+        {% include 'includes/header.html' %}
+    {% endblock %}
     <!-- Header END -->
     
     <!-- Main Content -->
@@ -34,7 +36,9 @@
     </main>
     
     <!-- Footer START -->
-    {% include 'includes/footer.html' %}
+    {% block show_footer %}
+        {% include 'includes/footer.html' %}
+    {% endblock %}
     <!-- Footer END -->
     
     <!-- Back to top -->
