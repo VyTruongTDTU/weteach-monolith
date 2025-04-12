@@ -1,0 +1,19 @@
+{% load static %}
+
+<section class="py-5">
+  <div class="container">
+    <div class="row bg-primary g-0 rounded-3 align-items-center">
+      <div class="col-lg-6 p-4 p-lg-5">
+        <h2 class="text-white">Ready to Start Your Journey?</h2>
+        <p class="text-white mb-4">Join thousands of learners and teachers already connecting on our platform. Whether you're looking to share your knowledge or gain new skills, WeTeach provides the tools you need to succeed.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href="{% url 'apps.users:register' %}" class="btn btn-light me-md-2">Sign Up as Learner</a>
+          <a href="{% url 'apps.users:register' %}?as_teacher=true" class="btn btn-outline-light">Sign Up as Teacher</a>
+        </div>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <img src="{% static 'images/element/01.svg' %}" class="img-fluid" alt="Call to action image">
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="fs-1">Looking for a Teacher?</h2>
+        <p class="mb-4">Learners can easily find the perfect teacher by creating a detailed hiring post specifying their teaching needs. Simply provide information about the teaching courses, preferred time, frequency, teaching place, desired fee, and any specific teacher requirements.</p>
+        <p>You can also view teacher profiles directly and request teaching sessions, skipping the initial hiring post creation.</p>
+        <a href="#" class="btn btn-primary mt-3">Create a Hiring Post</a>
+      </div>
+      <div class="col-md-6">
+        <!-- Popular course categories -->
+        <div class="row g-4 mt-3">
+          {% for course in popular_courses %}
+          <div class="col-sm-6 col-lg-6">
+            <div class="card card-body shadow p-4 h-100">
+              <h5>{{ course.name }}</h5>
+              <p class="mb-0 small">{{ course.description|truncatechars:60 }}</p>
+            </div>
+          </div>
+          {% empty %}
+          <div class="col-12">
+            <p>Popular courses coming soon!</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

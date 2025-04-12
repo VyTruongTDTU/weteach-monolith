@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}WeTeach - Connect Teachers and Learners{% endblock %}
+
+{% block content %}
+
+<!-- For Learners Section -->
+{% include 'includes/home/hero.html' %}
+
+<!-- For Learners Section -->
+{% include 'includes/home/for_learners.html' %}
+
+<!-- For Teachers Section -->
+{% include 'includes/home/for_teachers.html' %}
+
+<!-- How it Works Section -->
+{% include 'includes/home/how_it_works.html' %}
+
+<!-- Featured Posts Section -->
+{% include 'includes/home/featured_posts.html' with posts=featured_posts %}
+
+<!-- Featured Teachers Section -->
+{% include 'includes/home/featured_teachers.html' with teachers=featured_teachers %}
+
+<!-- Testimonials Section -->
+{% include 'includes/home/testimonials.html' %}
+
+<!-- Call-to-Action Section -->
+{% include 'includes/home/cta.html' %}
+
+{% endblock %}

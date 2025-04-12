@@ -1,0 +1,48 @@
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="fs-1">Featured Hiring Posts</h2>
+        <p class="mb-0">Browse through the latest teaching opportunities</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      {% for post in posts %}
+      <div class="col-sm-6 col-lg-4">
+        <div class="card shadow h-100">
+          <div class="card-header border-bottom">
+            <h5 class="card-title mb-0">{{ post.title }}</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-borderless">
+              <li class="list-group-item"><i class="bi bi-calendar-event me-2"></i>{{ post.preferred_start_date }}</li>
+              <li class="list-group-item"><i class="bi bi-clock me-2"></i>{{ post.preferred_start_time }}</li>
+              <li class="list-group-item"><i class="bi bi-geo-alt me-2"></i>{{ post.teaching_place }}</li>
+              <li class="list-group-item"><i class="bi bi-cash-stack me-2"></i>${{ post.teaching_fee }}</li>
+              <li class="list-group-item"><i class="bi bi-book me-2"></i>
+                {% for course in post.courses.all|slice:":2" %}
+                  {{ course.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+                {% if post.courses.count > 2 %}...{% endif %}
+              </li>
+            </ul>
+            <p class="mt-2 mb-0 small">{{ post.description|truncatechars:100 }}</p>
+          </div>
+          <div class="card-footer pt-0 border-0">
+            <a href="#" class="btn btn-sm btn-primary-soft mb-0">View Details</a>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12 text-center">
+        <p>No hiring posts available at the moment. Check back soon!</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-outline-primary">View All Hiring Posts</a>
+    </div>
+  </div>
+</section>

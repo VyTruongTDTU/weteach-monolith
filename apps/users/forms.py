@@ -49,7 +49,15 @@ class CustomUserCreationForm(UserCreationForm):
             'placeholder': 'Confirm Password'
         })
     )
+    
+    phone_number = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control border-0 bg-light rounded-end ps-1',
+            'placeholder': 'Phone Number'
+        })
+    )
 
     class Meta:
         model = CustomUser
-        fields = ('email', 'first_name', 'last_name', 'password1', 'password2')
+        fields = ('email', 'first_name', 'last_name', 'phone_number', 'password1', 'password2')

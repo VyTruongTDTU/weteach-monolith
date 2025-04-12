@@ -83,6 +83,16 @@
                                         {{ form.last_name }}
                                     </div>
                                 </div>
+                                <!-- Phone Number -->
+                                <div class="mb-4">
+                                    <label for="id_phone_number" class="form-label">Phone Number</label>
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+                                            <i class="bi bi-telephone-fill"></i>
+                                        </span>
+                                        {{ form.phone_number }}
+                                    </div>
+                                </div>
                                 <!-- Password -->
                                 <div class="mb-4">
                                     <label for="id_password1" class="form-label">Password *</label>
@@ -104,14 +114,14 @@
                                     </div>
                                 </div>
                                 <!-- Check box -->
-                                <div class="mb-4">
+                                <!-- <div class="mb-4">
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="acceptTerms">
                                         <label class="form-check-label" for="acceptTerms">
                                             I agree to the <a href="#">terms and conditions</a>
                                         </label>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- Button -->
                                 <div class="align-items-center mt-0">
                                     <div class="d-grid">
@@ -142,7 +152,9 @@
                                 </div>
                             </div>
                             <div class="mt-4 text-center">
-                                <span>Already have an account? <a href="{% url 'apps.users:login' %}">Sign in here</a></span>
+                                <span>Already have an account? <a href="{% url 'apps.users:login' %}">Sign in here
+                                    
+                                </a></span>
                             </div>
                         </div>
                     </div>

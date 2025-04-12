@@ -38,6 +38,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(_('active'), default=True)
     is_staff = models.BooleanField(_('staff status'), default=False)
     date_joined = models.DateTimeField(_('date joined'), auto_now_add=True)
+    phone_number = models.CharField(_('phone number'), max_length=15, blank=True)
+
 
     objects = CustomUserManager()
 
